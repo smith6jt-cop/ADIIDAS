@@ -17,11 +17,10 @@ The code starts with setting up the environment, setting the image type, extract
 
 ### Main functions:
 
-&emsp;- Ideal thresholds for insulin and glucagon are calculated using histograms of pixel intensity
-
-        - Histogram of pixel intensity is created
-          - Ideal thresholds are selected using the sliding window approach (getsfirststableintensity function), which determines the point in the histogram where the intensity values start to stabilize
-          - The threshold percentile is checked to match a target value, otherwise adjusted to match the target percentiles
+- Ideal thresholds for insulin and glucagon are calculated using histograms of pixel intensity
+  - Histogram of pixel intensity is created
+    - Ideal thresholds are selected using the sliding window approach (getsfirststableintensity function), which determines the point in the histogram where the intensity values start to stabilize
+    - The threshold percentile is checked to match a target value, otherwise adjusted to match the target percentiles
 
 &emsp;- Stained regions are classified and annotated as insulin and glucagon using thresholds identified in the previous step
 
