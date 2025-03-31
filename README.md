@@ -19,7 +19,7 @@ The code starts with setting up the environment, setting the image type, extract
 
 &emsp;Ideal thresholds for insulin and glucagon are calculated using histograms of pixel intensity
 
-&emsp;&emsp;Histogram of pixel intensity is created
+&emsp;&emsp;- Histogram of pixel intensity is created
 
 &emsp;&emsp;&emsp;Ideal thresholds are selected using the sliding window approach (getsfirststableintensity function), which determines the point in the histogram where the intensity values start to stabilize
 
@@ -27,22 +27,22 @@ The code starts with setting up the environment, setting the image type, extract
 
 &emsp;Stained regions are classified and annotated as insulin and glucagon using thresholds identified in the previous step
 
-&emsp;&emsp;Stain vectors are defined based on OD values for red and blue, as specified in the critical parameter section
+&emsp;&emsp;- Stain vectors are defined based on OD values for red and blue, as specified in the critical parameter section
 
-&emsp;&emsp;Color deconvolution is applied to separate the red and blue stains from background/other stains
+&emsp;&emsp;- Color deconvolution is applied to separate the red and blue stains from background/other stains
 
-&emsp;&emsp;Gaussian blur is applied based on sigma and threshold values identified using the histograms of pixel intensity in order to smoothen the image (reduce noise) and separate stained regions from background
+&emsp;&emsp;- Gaussian blur is applied based on sigma and threshold values identified using the histograms of pixel intensity in order to smoothen the image (reduce noise) and separate stained regions from background
 
-&emsp;&emsp;Pixel classifiers are created and run
+&emsp;&emsp;- Pixel classifiers are created and run
 
-&emsp;&emsp;Annotations are created wherever the thresholds defined above are being met
+&emsp;&emsp;- Annotations are created wherever the thresholds defined above are being met
 
-&emsp;&emsp;Annotations are refined and merged when stains are in contact using the “group_algo” function
+&emsp;&emsp;- Annotations are refined and merged when stains are in contact using the “group_algo” function
 
 &emsp;Distance between islets is calculated using the “line_algo” function
 
-&emsp;&emsp;Centroids for each islets are created and x and y coordinates for each annotation are determined
+&emsp;&emsp;- Centroids for each islets are created and x and y coordinates for each annotation are determined
 
-&emsp;&emsp;A line annotation is created between the centroid of an annotation and the nearest annotations, and the length of the line is measured to determine the distance to the closest islet
+&emsp;&emsp;- A line annotation is created between the centroid of an annotation and the nearest annotations, and the length of the line is measured to determine the distance to the closest islet
 
 &emsp;Measurements are exported.
