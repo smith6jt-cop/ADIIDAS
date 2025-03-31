@@ -18,11 +18,13 @@ The code starts with setting up the environment, setting the image type, extract
 ### Main functions:
 
 &emsp;- Ideal thresholds for insulin and glucagon are calculated using histograms of pixel intensity
+
         - Histogram of pixel intensity is created
           - Ideal thresholds are selected using the sliding window approach (getsfirststableintensity function), which determines the point in the histogram where the intensity values start to stabilize
           - The threshold percentile is checked to match a target value, otherwise adjusted to match the target percentiles
 
 &emsp;- Stained regions are classified and annotated as insulin and glucagon using thresholds identified in the previous step
+
         - Stain vectors are defined based on OD values for red and blue, as specified in the critical parameter section
         - Color deconvolution is applied to separate the red and blue stains from background/other stains
         - Gaussian blur is applied based on sigma and threshold values identified using the histograms of pixel intensity in order to smoothen the image (reduce noise) and separate stained regions from background
@@ -31,6 +33,7 @@ The code starts with setting up the environment, setting the image type, extract
         - Annotations are refined and merged when stains are in contact using the “group_algo” function
 
 &emsp;- Distance between islets is calculated using the “line_algo” function
+
         - Centroids for each islets are created and x and y coordinates for each annotation are determined
         - A line annotation is created between the centroid of an annotation and the nearest annotations, and the length of the line is measured to determine the distance to the closest islet
 
